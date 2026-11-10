@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: scada
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fabrica
+    username: postgres
+    password: postgres
+    drive-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/fabrica_telemetria
+
+    redis:
+      host: localhost
+      port: 6379
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+opcua:
+  endpoint-url: opc.tcp://localhost:4840/UA/Fabrica
+  namespace-index: 1
+
+server:
+  port: 8080
